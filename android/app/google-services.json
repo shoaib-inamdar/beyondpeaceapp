@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "1007760785812",
+    "firebase_url": "https://beyondpeaceapp-default-rtdb.firebaseio.com",
+    "project_id": "beyondpeaceapp",
+    "storage_bucket": "beyondpeaceapp.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1007760785812:android:4b752baf55a3b482a4cf81",
+        "android_client_info": {
+          "package_name": "com.example.beyondpeace"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1007760785812-dgsvcsbmotpn1l0c5q057guu4q07s12u.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.beyondpeace",
+            "certificate_hash": "7c90d810696506ffe9542f77744b9d2c4fb571cf"
+          }
+        },
+        {
+          "client_id": "1007760785812-6tij0ia68aco5vj91hol0b8piq1cangj.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAM2Ump4yWUaDFT7vBNJNUqY1AXszd10TI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1007760785812-6tij0ia68aco5vj91hol0b8piq1cangj.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "1007760785812-s0bd0sl843qivb6ik7cd3pj01bncg8ns.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.beyondpeace"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
