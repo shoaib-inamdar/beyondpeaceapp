@@ -10,6 +10,7 @@ class Doctorcall extends StatelessWidget {
       body: Container(
         decoration: BoxDecoration(color: Colors.blue),
         child: ListView(
+          physics: BouncingScrollPhysics(),
           children: [
             Doctorcom(text: "doctor1"),
             Doctorcom(text: "doctor2"),

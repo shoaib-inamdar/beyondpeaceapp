@@ -29,6 +29,7 @@ class Video_List extends StatelessWidget {
           } else if (data.hasData) {
             var items = data.data as List<VideoDataModel>;
             return ListView.builder(
+              physics: BouncingScrollPhysics(),
               // ignore: unnecessary_null_comparison
               itemCount: items == null ? 0 : items.length,
               itemBuilder: (context, index) {

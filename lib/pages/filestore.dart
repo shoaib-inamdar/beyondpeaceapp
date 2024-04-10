@@ -74,6 +74,7 @@ class _FilestorepageState extends State<Filestorepage> {
         animSpeedFactor: 5,
         showChildOpacityTransition: false,
         child: GridView.builder(
+            physics: BouncingScrollPhysics(),
             itemCount: pdfdata.length,
             gridDelegate:
                 SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 2),

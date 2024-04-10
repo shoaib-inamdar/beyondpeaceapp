@@ -7,6 +7,7 @@ class Suggestions extends StatelessWidget {
     return Scaffold(
         backgroundColor: Color(0xff739ccee),
         body: ListView(
+          physics: BouncingScrollPhysics(),
           scrollDirection: Axis.vertical,
           children: [
             Center(
