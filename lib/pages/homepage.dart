@@ -12,8 +12,10 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter_phone_direct_caller/flutter_phone_direct_caller.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 import 'package:vertical_card_pager/vertical_card_pager.dart';
+// import 'package:Google';
 
 class Homepage extends StatefulWidget {
   const Homepage({super.key});
@@ -25,12 +27,16 @@ class Homepage extends StatefulWidget {
 class _HomepageState extends State<Homepage> {
   int activeIndex = 0;
   final List<String> titles = [
+    "demo",
     "",
     "",
     "",
     "",
   ];
   final List<Widget> ewidget = [
+    Ecall(
+      image: "assets/images/ultragoku.jpg",
+    ),
     Ecall(
       image: "assets/images/ambulance.png",
     ),
@@ -128,7 +134,7 @@ class _HomepageState extends State<Homepage> {
                       ),
                       Text(
                         "BeyondPeace",
-                        style: TextStyle(
+                        style: GoogleFonts.poppins(
                             fontSize: 20, fontWeight: FontWeight.w600),
                       ),
                       GestureDetector(
@@ -146,17 +152,21 @@ class _HomepageState extends State<Homepage> {
                                   onSelectedItem: (index) {
                                     if (index == 0) {
                                       FlutterPhoneDirectCaller.callNumber(
-                                          '102');
+                                          '+917841932960');
                                     }
                                     if (index == 1) {
                                       FlutterPhoneDirectCaller.callNumber(
-                                          '100');
+                                          '102');
                                     }
                                     if (index == 2) {
                                       FlutterPhoneDirectCaller.callNumber(
-                                          '101');
+                                          '100');
                                     }
                                     if (index == 3) {
+                                      FlutterPhoneDirectCaller.callNumber(
+                                          '101');
+                                    }
+                                    if (index == 4) {
                                       FlutterPhoneDirectCaller.callNumber(
                                           '181');
                                     }
@@ -183,11 +193,8 @@ class _HomepageState extends State<Homepage> {
                 padding: const EdgeInsets.only(left: 20),
                 child: Text(
                   "DASHBOARD",
-                  style: TextStyle(
-                      // color: Colors.white,
-                      // decoration: TextDecoration.underline,
-                      fontSize: 50,
-                      fontWeight: FontWeight.w900),
+                  style: GoogleFonts.poppins(
+                      fontWeight: FontWeight.w600, fontSize: 45),
                 ),
               ),
               SizedBox(
@@ -243,12 +250,10 @@ class _HomepageState extends State<Homepage> {
                 padding: const EdgeInsets.only(
                   left: 20,
                 ),
-                child: const Text(
+                child: Text(
                   'Mental Exercise',
-                  style: TextStyle(
-                      color: Colors.black,
-                      fontSize: 30,
-                      fontWeight: FontWeight.bold),
+                  style: GoogleFonts.poppins(
+                      fontSize: 30, fontWeight: FontWeight.w600),
                 ),
               ),
               Padding(
@@ -347,11 +352,10 @@ class _HomepageState extends State<Homepage> {
                                     BorderRadius.all(Radius.circular(20)),
                                 color: const Color.fromARGB(115, 205, 198, 198),
                               ),
-                              child: Text('Communicate With a Doctor',
-                                  style: TextStyle(
-                                      fontWeight: FontWeight.bold,
-                                      fontSize: 24,
-                                      color: Colors.black),
+                              child: Text('Consult a Specialist',
+                                  style: GoogleFonts.poppins(
+                                      fontSize: 27,
+                                      fontWeight: FontWeight.w600),
                                   textAlign: TextAlign.center),
                             ),
                           ),
@@ -374,10 +378,10 @@ class _HomepageState extends State<Homepage> {
                           ),
                           child: Text(
                             'Special  Events',
-                            style: TextStyle(
-                                fontWeight: FontWeight.bold,
-                                fontSize: 24,
-                                color: Colors.white),
+                            style: GoogleFonts.poppins(
+                                fontSize: 27,
+                                color: Color(0xffffffff),
+                                fontWeight: FontWeight.w600),
                             textAlign: TextAlign.center,
                           ),
                         ),
@@ -389,12 +393,10 @@ class _HomepageState extends State<Homepage> {
 
               Padding(
                 padding: const EdgeInsets.only(left: 20, top: 10),
-                child: const Text(
+                child: Text(
                   'MUSIC',
-                  style: TextStyle(
-                      color: Colors.black,
-                      fontSize: 30,
-                      fontWeight: FontWeight.bold),
+                  style: GoogleFonts.poppins(
+                      fontSize: 30, fontWeight: FontWeight.w600),
                 ),
               ),
               Padding(
@@ -496,10 +498,10 @@ class _HomepageState extends State<Homepage> {
                                 // color: const Color.fromARGB(255, 169, 150, 150),
                               ),
                               child: Text('Nearby Hospitals',
-                                  style: TextStyle(
-                                      fontWeight: FontWeight.bold,
-                                      fontSize: 24,
-                                      color: Colors.white),
+                                  style: GoogleFonts.poppins(
+                                      fontSize: 27,
+                                      fontWeight: FontWeight.w600,
+                                      color: Color(0xffffffff)),
                                   textAlign: TextAlign.center),
                             ),
                           ),
@@ -522,11 +524,9 @@ class _HomepageState extends State<Homepage> {
                             color: Color(0xffdadada),
                           ),
                           child: Text(
-                            'Record of Medical Reports',
-                            style: TextStyle(
-                                fontWeight: FontWeight.bold,
-                                fontSize: 24,
-                                color: Colors.black),
+                            'Medical Reports',
+                            style: GoogleFonts.poppins(
+                                fontSize: 30, fontWeight: FontWeight.w600),
                             textAlign: TextAlign.center,
                           ),
                         ),
@@ -549,13 +549,16 @@ class _HomepageState extends State<Homepage> {
         child: InkWell(
           onTap: () {
             if (index == 0) {
-              Navigator.pushNamed(context, Myroutes.mentalmusicroute);
+              Navigator.pushNamed(context, Myroutes.doctorcommunicateroute);
             } else if (index == 1) {
               Navigator.pushNamed(context, Myroutes.mentalexerciseroute);
             } else if (index == 2) {
-              Navigator.pushNamed(context, Myroutes.doctorcommunicateroute);
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => MusicApp()),
+              );
             } else if (index == 3) {
-              Navigator.pushNamed(context, Myroutes.musicroute);
+              Navigator.pushNamed(context, Myroutes.filestoreroute);
             }
           },
           child: Container(

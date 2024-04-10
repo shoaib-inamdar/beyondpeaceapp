@@ -2,7 +2,10 @@
 import 'package:beyondpeace/components/drawerpage.dart';
 import 'package:beyondpeace/pages/Maps/Maps.dart';
 import 'package:beyondpeace/pages/assesment.dart';
+import 'package:beyondpeace/pages/doctor.dart';
+import 'package:beyondpeace/pages/filestore.dart';
 import 'package:beyondpeace/pages/login_or_register.dart';
+import 'package:beyondpeace/pages/noname.dart';
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:beyondpeace/pages/homepage.dart';
 // import 'package:beyondpeace/pages/login.dart';
@@ -27,7 +30,7 @@ class _MainpageState extends State<Mainpage> {
     });
   }
 
-  final _pages = [Homepage(), Maps(), Assesmentpage(), LoginRegister()];
+  final _pages = [Homepage(), Doctorcall(), Filestorepage(), Nonamepage()];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
