@@ -2,6 +2,8 @@
 import 'package:flutter/material.dart';
 
 class Suggestions extends StatelessWidget {
+  final int data;//data contains the Total Score of Assessment Test
+  Suggestions({required this.data});
   @override
   Widget build(BuildContext context) {
     return Scaffold(

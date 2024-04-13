@@ -40,28 +40,28 @@ class _MainpageState extends State<Mainpage> {
       bottomNavigationBar: CurvedNavigationBar(
         // buttonBackgroundColor: Color(0xffffffff),
         color: Color(0xff000000),
-        backgroundColor: Color(0xffe3ebf5),
+        backgroundColor: Color(0xffdadada),
         items: [
           Icon(
             Icons.home,
             size: 30,
-            color: Color(0xffffffff),
+            color: Color(0xffdadada),
             // fill: Color(0xffffffff),
           ),
           Icon(
-            Icons.list,
+            Icons.assignment_outlined,
             size: 30,
-            color: Color(0xffffffff),
+            color: Color(0xffdadada),
           ),
           Icon(
             Icons.file_copy,
             size: 30,
-            color: Color(0xffffffff),
+            color: Color(0xffdadada),
           ),
           Icon(
-            Icons.settings,
+            Icons.event_note_outlined,
             size: 30,
-            color: Color(0xffffffff),
+            color: Color(0xffdadada),
           )
         ],
         onTap: _navigateBottomBar,

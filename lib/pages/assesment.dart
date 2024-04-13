@@ -13,7 +13,7 @@ class Assesmentpage extends StatefulWidget {
   @override
   State<Assesmentpage> createState() => _AssesmentpageState();
 }
-
+int _points=0;
 class _AssesmentpageState extends State<Assesmentpage> {
   List<String> _question = [
     "How would you rate your overall mood over the past week?",
@@ -22,19 +22,80 @@ class _AssesmentpageState extends State<Assesmentpage> {
     "Rate your level of stress on a scale of 1 to 4",
     "How satisfied are you with your current relationships and social interactions?",
     "How often do you experience feelings of loneliness or isolation?",
-    "Qhow would you rate your ability to cope with stress?",
+    "how would you rate your ability to cope with stress?",
     "How would you rate your overall energy level throughout the day",
     "Rate your level of self-esteem and confidence.",
     "How would you rate your ability to manage and express your emotions effectively?"
   ];
+  List<String> _option1 = [
+    "Very Positive",
+    "Excellent",
+    "Highly motivated",
+    "1:Low",
+    "Very Satisfied",
+    "Frequently",
+    "Excellent",
+    "High",
+    "High",
+    "Excellent"
+  ];
+  List<String> _option2 = [
+    "Positive",
+    "Good",
+    "Moderately motivated",
+    "2:Medium",
+    "Satisfied",
+    "Occasionally",
+    "Good",
+    "Medium",
+    "Medium",
+    "Good"
+  ];
+  List<String> _option3 = [
+    "Normal",
+    "Fair",
+    "Slightly motivated",
+    "3:High",
+    "Normal",
+    "Rarely",
+    "Fair",
+    "Low",
+    "Low",
+    "Fair"
+  ];
+  List<String> _option4 = [
+    "Negative",
+    "Poor",
+    "Not motivated",
+    "4:Very High",
+    "Dissatisfied",
+    "Never",
+    "Poor",
+    "Very Low",
+    "Very Low",
+    "Very Poor"
+  ];
   int selected = 0;
   int percent = 0;
   final Page_controller = PageController(initialPage: 0);
+
   Widget customRadio(String text, int index) {
     return OutlinedButton(
       onPressed: () {
         setState(() {
           selected = index;
+          if (index == 1) {
+            _points = _points + 4;
+          }
+          if (index == 2) {
+            _points = _points + 3;
+          }
+          if (index == 3) {
+            _points = _points + 2;
+          }
+          if (index == 4) {
+            _points = _points + 1;
+          }
         });
       },
       child: Text(
@@ -86,35 +147,35 @@ class _AssesmentpageState extends State<Assesmentpage> {
                       padding: const EdgeInsets.only(top: 50, left: 40),
                       child: Container(
                           alignment: Alignment.centerLeft,
-                          child: customRadio("Option 1", 1)),
+                          child: customRadio(_option1[index], 1)),
                     ),
                     Padding(
                       padding: const EdgeInsets.only(top: 30, left: 40),
                       child: Container(
                           alignment: Alignment.centerLeft,
-                          child: customRadio("Option 2", 2)),
+                          child: customRadio(_option2[index], 2)),
                     ),
                     Padding(
                       padding: const EdgeInsets.only(top: 30, left: 40),
                       child: Container(
                           alignment: Alignment.centerLeft,
-                          child: customRadio("Option 3", 3)),
+                          child: customRadio(_option3[index], 3)),
                     ),
                     Padding(
                       padding: const EdgeInsets.only(top: 30, left: 40),
                       child: Container(
                           alignment: Alignment.centerLeft,
-                          child: customRadio("Option 4", 4)),
+                          child: customRadio(_option4[index], 4)),
                     ),
                   ],
                 ),
                 Padding(
                   padding:
-                      const EdgeInsets.only(left: 100, right: 100, top: 100),
+                  const EdgeInsets.only(left: 100, right: 100, top: 100),
                   child: ElevatedButton(
                     style: ButtonStyle(
                       backgroundColor:
-                          MaterialStateProperty.all(Colors.greenAccent),
+                      MaterialStateProperty.all(Colors.greenAccent),
                     ),
                     onPressed: () {
                       setState(() {
@@ -128,8 +189,10 @@ class _AssesmentpageState extends State<Assesmentpage> {
                             Navigator.push(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) => Suggestions()),
+                                  builder: (context) => Suggestions(data: _points,)),
                             );
+                            print('Total Points : $_points');
+
                           } else {
                             if (percent < 10) {
                               percent += 1;

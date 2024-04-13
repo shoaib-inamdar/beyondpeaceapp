@@ -88,56 +88,60 @@ class _MusicAppState extends State<MusicApp> {
                       isOpened = !isOpened;
                       setState(() {});
                     },
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceAround,
-                      children: [
-                        Container(
-                          height: 70,
-                          width: 70,
-                          margin: const EdgeInsets.only(right: 12),
-                          decoration: BoxDecoration(
-                              image: DecorationImage(
-                                  image: NetworkImage(
-                                      musics[currentMusic].cover))),
-                        ),
-                        Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Text(
-                              musics[currentMusic].musicName,
-                              style: const TextStyle(
-                                  fontSize: 18,
-                                  fontWeight: FontWeight.w600,
-                                  color: Colors.white),
+                    child: SingleChildScrollView(
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceAround,
+                        children: [
+                          Container(
+                            height: 70,
+                            width: 70,
+                            margin: const EdgeInsets.only(right: 12),
+                            decoration: BoxDecoration(
+                                image: DecorationImage(
+                                    image: NetworkImage(
+                                        musics[currentMusic].cover))),
+                          ),
+                          SingleChildScrollView(
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Text(
+                                  musics[currentMusic].musicName,
+                                  style: const TextStyle(
+                                      fontSize: 18,
+                                      fontWeight: FontWeight.w600,
+                                      color: Colors.white),
+                                ),
+                                Text(
+                                  musics[currentMusic].author,
+                                  style: TextStyle(
+                                      fontSize: 14,
+                                      fontWeight: FontWeight.w600,
+                                      color: Colors.white.withOpacity(0.7)),
+                                ),
+                              ],
                             ),
-                            Text(
-                              musics[currentMusic].author,
-                              style: TextStyle(
-                                  fontSize: 14,
-                                  fontWeight: FontWeight.w600,
-                                  color: Colors.white.withOpacity(0.7)),
-                            ),
-                          ],
-                        ),
-                        Center(
-                          child: IconButton(
-                              onPressed: () {
-                                player.state == PlayerState.playing
-                                    ? player.pause()
-                                    : player.play(AssetSource(
-                                        musics[currentMusic % musics.length]
-                                            .path));
-                                setState(() {});
-                              },
-                              icon: Icon(
-                                player.state == PlayerState.playing
-                                    ? Icons.pause
-                                    : Icons.play_arrow,
-                                size: 40,
-                                color: Colors.white,
-                              )),
-                        )
-                      ],
+                          ),
+                          Center(
+                            child: IconButton(
+                                onPressed: () {
+                                  player.state == PlayerState.playing
+                                      ? player.pause()
+                                      : player.play(AssetSource(
+                                          musics[currentMusic % musics.length]
+                                              .path));
+                                  setState(() {});
+                                },
+                                icon: Icon(
+                                  player.state == PlayerState.playing
+                                      ? Icons.pause
+                                      : Icons.play_arrow,
+                                  size: 40,
+                                  color: Colors.white,
+                                )),
+                          )
+                        ],
+                      ),
                     ),
                   )));
   }

@@ -88,7 +88,7 @@ class _HomepageState extends State<Homepage> {
       child: Scaffold(
         body: Container(
           decoration: BoxDecoration(
-            color: Color(0xff739BD0),
+            color: Color(0xffdadada),
           ),
           child: ListView(
             physics: BouncingScrollPhysics(
@@ -98,7 +98,7 @@ class _HomepageState extends State<Homepage> {
               Container(
                 margin: EdgeInsets.only(top: 20),
                 decoration: BoxDecoration(
-                    color: Color(0xFF739BD0),
+                    color: Color(0xFFdadada),
                     boxShadow: [
                       BoxShadow(
                         color: Color(0x000000).withOpacity(1),
