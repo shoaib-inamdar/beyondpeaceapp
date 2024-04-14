@@ -1,149 +1,197 @@
 // import 'package:flutter/cupertino.dart';
+import 'package:beyondpeace/utils/routes.dart';
 import 'package:flutter/material.dart';
 
-class Suggestions extends StatelessWidget {
-  final int data;//data contains the Total Score of Assessment Test
+class Suggestions extends StatefulWidget {
+  final int data; //data contains the Total Score of Assessment Test
   Suggestions({required this.data});
+
+  @override
+  State<Suggestions> createState() => _SuggestionsState();
+}
+
+class _SuggestionsState extends State<Suggestions> {
+  List suggesttext = ["", "", "", ""];
+  List suggestwidgets = [Widget1(), Widget2(), Widget3(), Widget4()];
+  var index;
+  void check() {
+    if (widget.data > 30) {
+      index = 0;
+    } else if (30 > widget.data && widget.data > 20) {
+      index = 1;
+    } else if (20 > widget.data && widget.data > 10) {
+      index = 2;
+    } else if (10 > widget.data && widget.data > 0) {
+      index = 3;
+    }
+  }
+
+  @override
+  void initState() {
+    check();
+    super.initState();
+  }
+
+  @override
+  void dispose() {
+    super.dispose();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        backgroundColor: Color(0xff739ccee),
+        backgroundColor: Color(0xffdadada),
         body: ListView(
-          physics: BouncingScrollPhysics(),
-          scrollDirection: Axis.vertical,
           children: [
-            Center(
-                child: Container(
-              margin: EdgeInsets.only(top: 40),
+            Container(
               child: Text(
-                "Suggetions For You Based On Result",
-                style: TextStyle(fontSize: 20, fontWeight: FontWeight.w700),
-              ),
-            )),
-            Container(
-              margin: EdgeInsets.only(top: 30),
-              child: Text(
-                "Excercises You can Do...",
-                style: TextStyle(fontSize: 20, fontWeight: FontWeight.w700),
-              ),
+                  "Here's What we would like to Suggest According to the Result"),
             ),
+            Container(child: Text(suggesttext[index])),
             Container(
-              color: Colors.white,
-              height: 180,
-              margin: EdgeInsets.only(top: 10),
-              child: ListView(
-                scrollDirection: Axis.horizontal,
-                children: [
-                  Container(
-                    height: 180,
-                    width: 150,
-                    color: Colors.blue,
-                    margin: EdgeInsets.all(10),
-                  ),
-                  Container(
-                    height: 180,
-                    width: 150,
-                    color: Colors.blue,
-                    margin: EdgeInsets.all(10),
-                  ),
-                  Container(
-                    height: 180,
-                    width: 150,
-                    color: Colors.blue,
-                    margin: EdgeInsets.all(10),
-                  ),
-                  Container(
-                    height: 180,
-                    width: 150,
-                    color: Colors.blue,
-                    margin: EdgeInsets.all(10),
-                  ),
-                ],
-              ),
-            ),
-            Container(
-              margin: EdgeInsets.only(top: 10),
-              child: Text(
-                "Musics to Listen...",
-                style: TextStyle(fontSize: 20, fontWeight: FontWeight.w700),
-              ),
-            ),
-            Container(
-              color: Colors.white,
-              height: 180,
-              margin: EdgeInsets.only(top: 10),
-              child: ListView(
-                scrollDirection: Axis.horizontal,
-                children: [
-                  Container(
-                    height: 180,
-                    width: 150,
-                    color: Colors.blue,
-                    margin: EdgeInsets.all(10),
-                  ),
-                  Container(
-                    height: 180,
-                    width: 150,
-                    color: Colors.blue,
-                    margin: EdgeInsets.all(10),
-                  ),
-                  Container(
-                    height: 180,
-                    width: 150,
-                    color: Colors.blue,
-                    margin: EdgeInsets.all(10),
-                  ),
-                  Container(
-                    height: 180,
-                    width: 150,
-                    color: Colors.blue,
-                    margin: EdgeInsets.all(10),
-                  ),
-                ],
-              ),
-            ),
-            Container(
-              margin: EdgeInsets.only(top: 10),
-              child: Text(
-                "Doctors to Consult...",
-                style: TextStyle(fontSize: 20, fontWeight: FontWeight.w700),
-              ),
-            ),
-            Container(
-              color: Colors.white,
-              height: 180,
-              margin: EdgeInsets.only(top: 10),
-              child: ListView(
-                scrollDirection: Axis.horizontal,
-                children: [
-                  Container(
-                    height: 180,
-                    width: 150,
-                    color: Colors.blue,
-                    margin: EdgeInsets.all(10),
-                  ),
-                  Container(
-                    height: 180,
-                    width: 150,
-                    color: Colors.blue,
-                    margin: EdgeInsets.all(10),
-                  ),
-                  Container(
-                    height: 180,
-                    width: 150,
-                    color: Colors.blue,
-                    margin: EdgeInsets.all(10),
-                  ),
-                  Container(
-                    height: 180,
-                    width: 150,
-                    color: Colors.blue,
-                    margin: EdgeInsets.all(10),
-                  ),
-                ],
-              ),
-            ),
+              child: suggestwidgets[index],
+            )
           ],
         ));
+  }
+}
+
+class Widget1 extends StatelessWidget {
+  const Widget1({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      child: ListView(
+        physics: BouncingScrollPhysics(),
+        children: [
+          InkWell(
+            onTap: () {
+              Navigator.pushNamed(context, Myroutes.mentalmusicroute);
+            },
+            child: Container(
+              child: Text('Music'),
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+}
+
+class Widget2 extends StatelessWidget {
+  const Widget2({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      child: ListView(
+        physics: BouncingScrollPhysics(),
+        children: [
+          InkWell(
+            onTap: () {
+              Navigator.pushNamed(context, Myroutes.mentalmusicroute);
+            },
+            child: Container(
+              child: Text('Music'),
+            ),
+          ),
+          InkWell(
+            onTap: () {
+              Navigator.pushNamed(context, Myroutes.specialeventroute);
+            },
+            child: Container(
+              child: Text('Special Events'),
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+}
+
+class Widget3 extends StatelessWidget {
+  const Widget3({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      child: ListView(
+        physics: BouncingScrollPhysics(),
+        children: [
+          InkWell(
+            onTap: () {
+              Navigator.pushNamed(context, Myroutes.mentalmusicroute);
+            },
+            child: Container(
+              child: Text('Music'),
+            ),
+          ),
+          InkWell(
+            onTap: () {
+              Navigator.pushNamed(context, Myroutes.specialeventroute);
+            },
+            child: Container(
+              child: Text('Special Events'),
+            ),
+          ),
+          InkWell(
+            onTap: () {
+              Navigator.pushNamed(context, Myroutes.mentalexerciseroute);
+            },
+            child: Container(
+              child: Text('Brain Exercise'),
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+}
+
+class Widget4 extends StatelessWidget {
+  const Widget4({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      child: ListView(
+        physics: BouncingScrollPhysics(),
+        children: [
+          InkWell(
+            onTap: () {
+              Navigator.pushNamed(context, Myroutes.mentalmusicroute);
+            },
+            child: Container(
+              child: Text('Music'),
+            ),
+          ),
+          InkWell(
+            onTap: () {
+              Navigator.pushNamed(context, Myroutes.specialeventroute);
+            },
+            child: Container(
+              child: Text('Special Events'),
+            ),
+          ),
+          InkWell(
+            onTap: () {
+              Navigator.pushNamed(context, Myroutes.mentalexerciseroute);
+            },
+            child: Container(
+              child: Text('Brain Exercise'),
+            ),
+          ),
+          InkWell(
+            onTap: () {
+              Navigator.pushNamed(context, Myroutes.doctorcommunicateroute);
+            },
+            child: Container(
+              child: Text('Consult Specialist'),
+            ),
+          ),
+        ],
+      ),
+    );
   }
 }

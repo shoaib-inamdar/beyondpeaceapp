@@ -89,10 +89,10 @@ class _HomepageState extends State<Homepage> {
         body: Container(
           decoration: BoxDecoration(
             gradient: LinearGradient(
-              colors: [Color(0xff00dcf2), Color(0xff8c72cd)],
+              colors: [Color(0xffef4254), Color(0xffdf2a3b)],
               stops: [0.25, 0.75],
-              begin: Alignment.topRight,
-              end: Alignment.bottomLeft,
+              begin: Alignment.topLeft,
+              end: Alignment.bottomRight,
             ),
             color: Color(0xffdadada),
           ),
@@ -104,7 +104,7 @@ class _HomepageState extends State<Homepage> {
               Container(
                 margin: EdgeInsets.only(top: 20),
                 decoration: BoxDecoration(
-                    color: Color(0xff8c72cd),
+                    color: Color(0xffef4254),
                     boxShadow: [
                       BoxShadow(
                         color: Color(0x000000).withOpacity(1),
@@ -131,7 +131,6 @@ class _HomepageState extends State<Homepage> {
                           height: 40,
                           decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(20),
-                              color: Colors.red,
                               image: new DecorationImage(
                                   image:
                                       AssetImage("assets/images/ultragoku.jpg"),
