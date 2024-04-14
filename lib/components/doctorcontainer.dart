@@ -8,7 +8,8 @@ class Doctorcom extends StatelessWidget {
   Doctorcom({required this.text});
 
   _launchURL() async {
-    final Uri url = Uri.parse('https://flutter.dev');
+    final Uri url =
+        Uri.parse('https://shoaib-inamdar.github.io/beyondPeace-website/');
     if (!await launchUrl(url)) {
       throw Exception('Could not launch $url');
     }

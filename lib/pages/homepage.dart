@@ -88,6 +88,12 @@ class _HomepageState extends State<Homepage> {
       child: Scaffold(
         body: Container(
           decoration: BoxDecoration(
+            gradient: LinearGradient(
+              colors: [Color(0xff00dcf2), Color(0xff8c72cd)],
+              stops: [0.25, 0.75],
+              begin: Alignment.topRight,
+              end: Alignment.bottomLeft,
+            ),
             color: Color(0xffdadada),
           ),
           child: ListView(
@@ -98,7 +104,7 @@ class _HomepageState extends State<Homepage> {
               Container(
                 margin: EdgeInsets.only(top: 20),
                 decoration: BoxDecoration(
-                    color: Color(0xFFdadada),
+                    color: Color(0xff8c72cd),
                     boxShadow: [
                       BoxShadow(
                         color: Color(0x000000).withOpacity(1),
@@ -137,52 +143,58 @@ class _HomepageState extends State<Homepage> {
                         style: GoogleFonts.poppins(
                             fontSize: 20, fontWeight: FontWeight.w600),
                       ),
-                      GestureDetector(
-                        onTap: () {
-                          showModalBottomSheet(
-                              // showDragHandle: true,
-                              context: context,
-                              builder: (context) {
-                                return VerticalCardPager(
-                                  initialPage: 0,
-                                  physics: BouncingScrollPhysics(),
-                                  titles: titles,
-                                  images: ewidget,
-                                  align: ALIGN.CENTER,
-                                  onSelectedItem: (index) {
-                                    if (index == 0) {
-                                      FlutterPhoneDirectCaller.callNumber(
-                                          '+917841932960');
-                                    }
-                                    if (index == 1) {
-                                      FlutterPhoneDirectCaller.callNumber(
-                                          '102');
-                                    }
-                                    if (index == 2) {
-                                      FlutterPhoneDirectCaller.callNumber(
-                                          '100');
-                                    }
-                                    if (index == 3) {
-                                      FlutterPhoneDirectCaller.callNumber(
-                                          '101');
-                                    }
-                                    if (index == 4) {
-                                      FlutterPhoneDirectCaller.callNumber(
-                                          '181');
-                                    }
-                                  },
-                                );
-                              });
-                        },
-                        child: Container(
-                          width: 30,
-                          height: 30,
-                          decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(20),
-                              image: new DecorationImage(
-                                  image:
-                                      AssetImage("assets/images/emergency.png"),
-                                  fit: BoxFit.contain)),
+                      Container(
+                        padding: EdgeInsets.all(4),
+                        decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(20),
+                            border: Border.all(color: Color(0xff000000))),
+                        child: GestureDetector(
+                          onTap: () {
+                            showModalBottomSheet(
+                                // showDragHandle: true,
+                                context: context,
+                                builder: (context) {
+                                  return VerticalCardPager(
+                                    initialPage: 0,
+                                    physics: BouncingScrollPhysics(),
+                                    titles: titles,
+                                    images: ewidget,
+                                    align: ALIGN.CENTER,
+                                    onSelectedItem: (index) {
+                                      if (index == 0) {
+                                        FlutterPhoneDirectCaller.callNumber(
+                                            '+917841932960');
+                                      }
+                                      if (index == 1) {
+                                        FlutterPhoneDirectCaller.callNumber(
+                                            '102');
+                                      }
+                                      if (index == 2) {
+                                        FlutterPhoneDirectCaller.callNumber(
+                                            '100');
+                                      }
+                                      if (index == 3) {
+                                        FlutterPhoneDirectCaller.callNumber(
+                                            '101');
+                                      }
+                                      if (index == 4) {
+                                        FlutterPhoneDirectCaller.callNumber(
+                                            '181');
+                                      }
+                                    },
+                                  );
+                                });
+                          },
+                          child: Container(
+                            width: 30,
+                            height: 30,
+                            decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(20),
+                                image: new DecorationImage(
+                                    image: AssetImage(
+                                        "assets/images/emergency.png"),
+                                    fit: BoxFit.contain)),
+                          ),
                         ),
                       ),
                     ],
@@ -367,7 +379,8 @@ class _HomepageState extends State<Homepage> {
                           const EdgeInsets.only(top: 10, left: 8, right: 8),
                       child: InkWell(
                         onTap: () {
-                          Navigator.pushNamed(context, Myroutes.nonameroute);
+                          Navigator.pushNamed(
+                              context, Myroutes.specialeventroute);
                         },
                         child: Container(
                           width: 183,

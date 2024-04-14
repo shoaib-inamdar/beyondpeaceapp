@@ -6,6 +6,7 @@ import 'package:beyondpeace/pages/doctor.dart';
 import 'package:beyondpeace/pages/filestore.dart';
 import 'package:beyondpeace/pages/login_or_register.dart';
 import 'package:beyondpeace/pages/noname.dart';
+import 'package:beyondpeace/pages/specialevent.dart';
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:beyondpeace/pages/homepage.dart';
 // import 'package:beyondpeace/pages/login.dart';
@@ -30,7 +31,7 @@ class _MainpageState extends State<Mainpage> {
     });
   }
 
-  final _pages = [Homepage(), Doctorcall(), Filestorepage(), Nonamepage()];
+  final _pages = [Homepage(), Doctorcall(), Filestorepage(), Specialevent()];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -39,7 +40,7 @@ class _MainpageState extends State<Mainpage> {
       body: _pages[_selectedindex],
       bottomNavigationBar: CurvedNavigationBar(
         // buttonBackgroundColor: Color(0xffffffff),
-        color: Color(0xff000000),
+        color: Color(0xff8c72cd),
         backgroundColor: Color(0xffdadada),
         items: [
           Icon(
