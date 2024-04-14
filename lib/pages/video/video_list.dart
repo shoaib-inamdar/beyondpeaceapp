@@ -6,6 +6,8 @@ import 'package:flutter/services.dart';
 // import 'package:youtube_videoplayer/videodatamodel.dart';
 import 'dart:convert';
 
+import 'package:google_fonts/google_fonts.dart';
+
 // import 'package:youtube_videoplayer/youtubePlayer.dart';
 
 class Video_List extends StatelessWidget {
@@ -45,13 +47,13 @@ class Video_List extends StatelessWidget {
                   child: Card(
                     margin: EdgeInsets.only(top: 20, left: 20, right: 20),
                     elevation: 5,
-                    color: Colors.orangeAccent,
+                    color: Color(0xff689AFA),
                     child: Container(
                         margin: EdgeInsets.all(30),
                         child: Text(
                           items[index].title.toString(),
-                          style: TextStyle(
-                              fontSize: 20, fontWeight: FontWeight.bold),
+                          style: GoogleFonts.poppins(
+                              fontSize: 17, fontWeight: FontWeight.w500),
                         )),
                   ),
                 );

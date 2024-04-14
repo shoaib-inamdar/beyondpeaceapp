@@ -9,7 +9,7 @@ class Doctorcom extends StatelessWidget {
 
   _launchURL() async {
     final Uri url =
-        Uri.parse('https://shoaib-inamdar.github.io/beyondPeace-website/');
+        Uri.parse('https://shoaib-inamdar.github.io/beyondpeacechat/');
     if (!await launchUrl(url)) {
       throw Exception('Could not launch $url');
     }
@@ -27,6 +27,7 @@ class Doctorcom extends StatelessWidget {
       child: Column(
         children: [
           Row(
+            // mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: [
               Container(
                 width: 100,
@@ -37,7 +38,16 @@ class Doctorcom extends StatelessWidget {
                         image: AssetImage('assets/images/doc.jpg'))),
               ),
               SizedBox(
-                width: 40,
+                width: 15,
+              ),
+              Container(
+                height: 120,
+                child: VerticalDivider(
+                  color: Color(0xff000000),
+                ),
+              ),
+              SizedBox(
+                width: 15,
               ),
               Column(
                 children: [

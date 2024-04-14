@@ -121,6 +121,9 @@ class _SigninState extends State<Signin> {
                                 });
                               },
                             ),
+                            SizedBox(
+                              height: 10,
+                            ),
                             TextFormField(
                               key: ValueKey('email'),
                               // controller: emailController,
@@ -173,6 +176,9 @@ class _SigninState extends State<Signin> {
                                     password = value!;
                                   });
                                 }),
+                            SizedBox(
+                              height: 10,
+                            ),
                             TextFormField(
                               // controller: confirmpassController,
                               obscureText: true,
