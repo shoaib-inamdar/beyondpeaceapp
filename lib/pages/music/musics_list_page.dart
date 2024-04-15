@@ -28,38 +28,44 @@ class _MusicAppState extends State<MusicApp> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(
-          title: const Text("My List"),
-          centerTitle: true,
-        ),
-        body: SizedBox(
-          height: MediaQuery.of(context).size.height,
-          width: MediaQuery.of(context).size.width,
-          child: Stack(
-            children: [
-              if (!isOpened)
-                Column(
-                  children: [
-                    ...List.generate(
-                        musics.length,
-                        (index) => InkWell(
-                            onTap: () {
-                              currentMusic = index;
-                              isOpened = !isOpened;
-                              setState(() {});
-                              // Navigator.push(
-                              //     context,
-                              //     MaterialPageRoute(
-                              //         builder: (context) => AudioPlayerPage(
-                              //               index: index,
-                              //               player: player,
-                              //               music: musics[index],
-                              //             )));
-                            },
-                            child: MusicItem(music: musics[index])))
-                  ],
-                )
-            ],
+        body: Container(
+          decoration: BoxDecoration(
+            gradient: LinearGradient(
+              colors: [Color(0xff6dd5ed), Color(0xfff8cdda)],
+              stops: [0.25, 0.75],
+              begin: Alignment.topRight,
+              end: Alignment.bottomLeft,
+            ),
+          ),
+          child: SizedBox(
+            height: MediaQuery.of(context).size.height,
+            width: MediaQuery.of(context).size.width,
+            child: Stack(
+              children: [
+                if (!isOpened)
+                  Column(
+                    children: [
+                      ...List.generate(
+                          musics.length,
+                          (index) => InkWell(
+                              onTap: () {
+                                currentMusic = index;
+                                isOpened = !isOpened;
+                                setState(() {});
+                                // Navigator.push(
+                                //     context,
+                                //     MaterialPageRoute(
+                                //         builder: (context) => AudioPlayerPage(
+                                //               index: index,
+                                //               player: player,
+                                //               music: musics[index],
+                                //             )));
+                              },
+                              child: MusicItem(music: musics[index])))
+                    ],
+                  )
+              ],
+            ),
           ),
         ),
         bottomNavigationBar: AnimatedContainer(

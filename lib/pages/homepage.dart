@@ -35,7 +35,7 @@ class _HomepageState extends State<Homepage> {
   ];
   final List<Widget> ewidget = [
     Ecall(
-      image: "assets/images/ultragoku.jpg",
+      image: "assets/images/brain.jpg",
     ),
     Ecall(
       image: "assets/images/ambulance.png",

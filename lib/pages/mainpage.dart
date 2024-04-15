@@ -40,7 +40,7 @@ class _MainpageState extends State<Mainpage> {
       body: _pages[_selectedindex],
       bottomNavigationBar: CurvedNavigationBar(
         // buttonBackgroundColor: Color(0xffffffff),
-        color: Color(0xff000000),
+        color: Color(0xffFA2C6A),
         backgroundColor: Color(0xffdadada),
         items: [
           Icon(

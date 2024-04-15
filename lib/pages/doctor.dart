@@ -8,7 +8,14 @@ class Doctorcall extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
-        decoration: BoxDecoration(color: Color(0xffdadada)),
+        decoration: BoxDecoration(
+          gradient: LinearGradient(
+            colors: [Color(0xff6dd5ed), Color(0xfff8cdda)],
+            stops: [0.25, 0.75],
+            begin: Alignment.topRight,
+            end: Alignment.bottomLeft,
+          ),
+        ),
         child: ListView(
           physics: BouncingScrollPhysics(),
           children: [

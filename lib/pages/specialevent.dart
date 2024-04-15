@@ -9,7 +9,14 @@ class Specialevent extends StatelessWidget {
     return Scaffold(
       body: Container(
         padding: const EdgeInsets.only(top: 10, left: 10, right: 10),
-        decoration: BoxDecoration(color: Color(0xffdadada)),
+        decoration: BoxDecoration(
+          gradient: LinearGradient(
+            colors: [Color(0xff6dd5ed), Color(0xfff8cdda)],
+            stops: [0.25, 0.75],
+            begin: Alignment.topRight,
+            end: Alignment.bottomLeft,
+          ),
+        ),
         child: ListView(
           physics: BouncingScrollPhysics(),
           children: [
