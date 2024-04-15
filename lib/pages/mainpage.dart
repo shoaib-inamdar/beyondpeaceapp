@@ -41,7 +41,7 @@ class _MainpageState extends State<Mainpage> {
       bottomNavigationBar: CurvedNavigationBar(
         // buttonBackgroundColor: Color(0xffffffff),
         color: Color(0xffFA2C6A),
-        backgroundColor: Color(0xffdadada),
+        backgroundColor: Color(0xfff8cdda),
         items: [
           Icon(
             Icons.home,

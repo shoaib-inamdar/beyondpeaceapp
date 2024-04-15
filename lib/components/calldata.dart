@@ -13,6 +13,7 @@ class Ecall extends StatelessWidget {
       width: 200,
       height: 10,
       decoration: BoxDecoration(
+        border: Border.all(color: Color(0xffffffff), width: 3),
         image: DecorationImage(image: AssetImage(image), fit: BoxFit.contain),
         borderRadius: BorderRadius.all(Radius.circular(20)),
         gradient: LinearGradient(

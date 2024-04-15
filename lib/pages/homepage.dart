@@ -35,7 +35,7 @@ class _HomepageState extends State<Homepage> {
   ];
   final List<Widget> ewidget = [
     Ecall(
-      image: "assets/images/brain.jpg",
+      image: "assets/images/icon.png",
     ),
     Ecall(
       image: "assets/images/ambulance.png",
@@ -129,24 +129,31 @@ class _HomepageState extends State<Homepage> {
                         child: Container(
                           width: 40,
                           height: 40,
+                          padding: EdgeInsets.all(10),
                           decoration: BoxDecoration(
+                              color: Color(0xfff8cdda),
+                              border: Border.all(
+                                  color: Color(0xffffffff), width: 2),
                               borderRadius: BorderRadius.circular(20),
                               image: new DecorationImage(
-                                  image:
-                                      AssetImage("assets/images/ultragoku.jpg"),
-                                  fit: BoxFit.cover)),
+                                  image: AssetImage("assets/images/icon.png"),
+                                  fit: BoxFit.contain)),
                         ),
                       ),
                       Text(
                         "BeyondPeace",
                         style: GoogleFonts.poppins(
-                            fontSize: 20, fontWeight: FontWeight.w600),
+                            color: Color(0xffffffff),
+                            fontSize: 20,
+                            fontWeight: FontWeight.w600),
                       ),
                       Container(
                         padding: EdgeInsets.all(4),
                         decoration: BoxDecoration(
+                            color: Color(0xfff8cdda),
                             borderRadius: BorderRadius.circular(20),
-                            border: Border.all(color: Color(0xff000000))),
+                            border:
+                                Border.all(color: Color(0xffffffff), width: 2)),
                         child: GestureDetector(
                           onTap: () {
                             showModalBottomSheet(
@@ -363,7 +370,7 @@ class _HomepageState extends State<Homepage> {
                                     color: Color(0xffffffff), width: 3),
                                 borderRadius:
                                     BorderRadius.all(Radius.circular(20)),
-                                color: const Color.fromARGB(115, 205, 198, 198),
+                                color: const Color.fromARGB(115, 255, 255, 255),
                               ),
                               child: Text('Consult a Specialist👨🏻‍⚕️🩺💉',
                                   style: GoogleFonts.poppins(
@@ -437,7 +444,7 @@ class _HomepageState extends State<Homepage> {
                 child: Row(
                   children: [
                     SizedBox(
-                      width: 20,
+                      width: 10,
                     ),
                     Musiccontainer(
                       image: 'assets/images/music.jpeg',
@@ -517,7 +524,7 @@ class _HomepageState extends State<Homepage> {
                               alignment: Alignment.center,
                               decoration: BoxDecoration(
                                 border: Border.all(
-                                    color: Color(0xffffffff), width: 2),
+                                    color: Color(0xffffffff), width: 3),
                                 // color: Color(0xff000000),
                                 borderRadius:
                                     BorderRadius.all(Radius.circular(20)),
@@ -550,7 +557,7 @@ class _HomepageState extends State<Homepage> {
                               alignment: Alignment.center,
                               decoration: BoxDecoration(
                                 border: Border.all(
-                                    color: Color(0xffffffff), width: 2),
+                                    color: Color(0xffffffff), width: 3),
                                 borderRadius:
                                     BorderRadius.all(Radius.circular(20)),
                                 color: const Color.fromARGB(115, 255, 255, 255),
@@ -618,7 +625,7 @@ class _HomepageState extends State<Homepage> {
             spacing: 20,
             // offset: 22,r
             verticalOffset: 14.0,
-            activeDotColor: Colors.black,
+            activeDotColor: Color(0xffFA2C6A),
             dotColor: Color(0xffdadada)),
       );
 }

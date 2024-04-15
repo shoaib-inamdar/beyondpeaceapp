@@ -57,7 +57,7 @@ class MyApp extends StatelessWidget {
         Myroutes.specialeventroute: (context) => Specialevent(),
         Myroutes.authroute: (context) => Authpage()
       },
-      home: const Authpage(),
+      home: const Splashscreen(),
     );
   }
 }
