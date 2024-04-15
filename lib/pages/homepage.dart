@@ -89,7 +89,7 @@ class _HomepageState extends State<Homepage> {
         body: Container(
           decoration: BoxDecoration(
             gradient: LinearGradient(
-              colors: [Color(0xfffcea32), Color(0xfffbb73e)],
+              colors: [Color(0xff6dd5ed), Color(0xfff8cdda)],
               stops: [0.25, 0.75],
               begin: Alignment.topRight,
               end: Alignment.bottomLeft,
@@ -104,7 +104,7 @@ class _HomepageState extends State<Homepage> {
               Container(
                 margin: EdgeInsets.only(top: 20),
                 decoration: BoxDecoration(
-                    color: Color(0xfffcea32),
+                    color: Color(0xff6dd5ed),
                     boxShadow: [
                       BoxShadow(
                         color: Color(0x000000).withOpacity(1),
@@ -293,21 +293,21 @@ class _HomepageState extends State<Homepage> {
                                   context, Myroutes.mentalexerciseroute)
                             },
                         child: Exercisecontainer(
-                            image: 'assets/images/exercise1.png')),
+                            image: 'assets/images/exercise.jpeg')),
                     InkWell(
                         onTap: () => {
                               Navigator.pushNamed(
                                   context, Myroutes.mentalexerciseroute)
                             },
                         child: Exercisecontainer(
-                            image: 'assets/images/exercise2.png')),
+                            image: 'assets/images/exercise.jpeg')),
                     InkWell(
                         onTap: () => {
                               Navigator.pushNamed(
                                   context, Myroutes.mentalexerciseroute)
                             },
                         child: Exercisecontainer(
-                            image: 'assets/images/exercise3.png')),
+                            image: 'assets/images/exercise.jpeg')),
                     InkWell(
                       onTap: () => {
                         Navigator.pushNamed(
@@ -318,6 +318,8 @@ class _HomepageState extends State<Homepage> {
                         height: 180,
                         alignment: Alignment.center,
                         decoration: BoxDecoration(
+                          image: DecorationImage(
+                              image: AssetImage('assets/images/exercise.jpeg')),
                           border: Border.all(color: Colors.white),
                           borderRadius:
                               const BorderRadius.all(Radius.circular(20)),
@@ -438,7 +440,7 @@ class _HomepageState extends State<Homepage> {
                       width: 20,
                     ),
                     Musiccontainer(
-                      image: 'assets/images/music1.png',
+                      image: 'assets/images/music.jpeg',
                       ontap: () {
                         Navigator.push(
                           context,
@@ -447,7 +449,7 @@ class _HomepageState extends State<Homepage> {
                       },
                     ),
                     Musiccontainer(
-                      image: 'assets/images/music2.png',
+                      image: 'assets/images/music.jpeg',
                       ontap: () {
                         Navigator.push(
                           context,
@@ -456,7 +458,7 @@ class _HomepageState extends State<Homepage> {
                       },
                     ),
                     Musiccontainer(
-                      image: 'assets/images/music3.png',
+                      image: 'assets/images/music.jpeg',
                       ontap: () {
                         Navigator.push(
                           context,
@@ -473,6 +475,8 @@ class _HomepageState extends State<Homepage> {
                         height: 180,
                         alignment: Alignment.center,
                         decoration: BoxDecoration(
+                          image: DecorationImage(
+                              image: AssetImage('assets/images/music.jpeg')),
                           border: Border.all(color: Colors.black),
                           borderRadius:
                               const BorderRadius.all(Radius.circular(20)),
@@ -512,16 +516,18 @@ class _HomepageState extends State<Homepage> {
                               width: 183,
                               alignment: Alignment.center,
                               decoration: BoxDecoration(
-                                color: Color(0xff000000),
+                                border: Border.all(
+                                    color: Color(0xffffffff), width: 2),
+                                // color: Color(0xff000000),
                                 borderRadius:
                                     BorderRadius.all(Radius.circular(20)),
-                                // color: const Color.fromARGB(255, 169, 150, 150),
+                                color: const Color.fromARGB(115, 255, 255, 255),
                               ),
                               child: Text('📍Nearby Hospitals',
                                   style: GoogleFonts.poppins(
                                       fontSize: 27,
                                       fontWeight: FontWeight.w600,
-                                      color: Color(0xffffffff)),
+                                      color: Color(0xff000000)),
                                   textAlign: TextAlign.center),
                             ),
                           ),
@@ -531,23 +537,31 @@ class _HomepageState extends State<Homepage> {
                     Padding(
                       padding: const EdgeInsets.only(
                           top: 10, left: 8, right: 8, bottom: 8),
-                      child: InkWell(
-                        onTap: () => {
-                          Navigator.pushNamed(context, Myroutes.filestoreroute)
-                        },
-                        child: Container(
-                          width: 183,
-                          alignment: Alignment.center,
-                          decoration: BoxDecoration(
-                            border: Border.all(color: Colors.black),
-                            borderRadius: BorderRadius.all(Radius.circular(20)),
-                            color: Color(0xffdadada),
-                          ),
-                          child: Text(
-                            'Medical Reports📁',
-                            style: GoogleFonts.poppins(
-                                fontSize: 30, fontWeight: FontWeight.w600),
-                            textAlign: TextAlign.center,
+                      child: ClipRect(
+                        child: BackdropFilter(
+                          filter: ImageFilter.blur(sigmaX: 10, sigmaY: 10),
+                          child: InkWell(
+                            onTap: () => {
+                              Navigator.pushNamed(
+                                  context, Myroutes.filestoreroute)
+                            },
+                            child: Container(
+                              width: 183,
+                              alignment: Alignment.center,
+                              decoration: BoxDecoration(
+                                border: Border.all(
+                                    color: Color(0xffffffff), width: 2),
+                                borderRadius:
+                                    BorderRadius.all(Radius.circular(20)),
+                                color: const Color.fromARGB(115, 255, 255, 255),
+                              ),
+                              child: Text(
+                                'Medical Reports📁',
+                                style: GoogleFonts.poppins(
+                                    fontSize: 30, fontWeight: FontWeight.w600),
+                                textAlign: TextAlign.center,
+                              ),
+                            ),
                           ),
                         ),
                       ),

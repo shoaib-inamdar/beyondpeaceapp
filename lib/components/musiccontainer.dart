@@ -13,8 +13,8 @@ class Musiccontainer extends StatelessWidget {
       onTap: ontap,
       child: Container(
           width: 180,
-          margin: EdgeInsets.all(3),
-          height: 200,
+          margin: EdgeInsets.only(top: 10, left: 10),
+          height: 180,
           alignment: Alignment.center,
           decoration: BoxDecoration(
               border: Border.all(color: Colors.white),
