@@ -89,10 +89,10 @@ class _HomepageState extends State<Homepage> {
         body: Container(
           decoration: BoxDecoration(
             gradient: LinearGradient(
-              colors: [Color(0xffef4254), Color(0xffdf2a3b)],
+              colors: [Color(0xfffcea32), Color(0xfffbb73e)],
               stops: [0.25, 0.75],
-              begin: Alignment.topLeft,
-              end: Alignment.bottomRight,
+              begin: Alignment.topRight,
+              end: Alignment.bottomLeft,
             ),
             color: Color(0xffdadada),
           ),
@@ -104,7 +104,7 @@ class _HomepageState extends State<Homepage> {
               Container(
                 margin: EdgeInsets.only(top: 20),
                 decoration: BoxDecoration(
-                    color: Color(0xffef4254),
+                    color: Color(0xfffcea32),
                     boxShadow: [
                       BoxShadow(
                         color: Color(0x000000).withOpacity(1),
@@ -363,7 +363,7 @@ class _HomepageState extends State<Homepage> {
                                     BorderRadius.all(Radius.circular(20)),
                                 color: const Color.fromARGB(115, 205, 198, 198),
                               ),
-                              child: Text('Consult a Specialist',
+                              child: Text('Consult a Specialist👨🏻‍⚕️🩺💉',
                                   style: GoogleFonts.poppins(
                                       fontSize: 27,
                                       fontWeight: FontWeight.w600),
@@ -376,25 +376,33 @@ class _HomepageState extends State<Homepage> {
                     Padding(
                       padding:
                           const EdgeInsets.only(top: 10, left: 8, right: 8),
-                      child: InkWell(
-                        onTap: () {
-                          Navigator.pushNamed(
-                              context, Myroutes.specialeventroute);
-                        },
-                        child: Container(
-                          width: 183,
-                          alignment: Alignment.center,
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.all(Radius.circular(20)),
-                            color: Color(0xff000000),
-                          ),
-                          child: Text(
-                            'Special  Events',
-                            style: GoogleFonts.poppins(
-                                fontSize: 27,
-                                color: Color(0xffffffff),
-                                fontWeight: FontWeight.w600),
-                            textAlign: TextAlign.center,
+                      child: ClipRect(
+                        child: BackdropFilter(
+                          filter: ImageFilter.blur(sigmaX: 5, sigmaY: 5),
+                          child: InkWell(
+                            onTap: () {
+                              Navigator.pushNamed(
+                                  context, Myroutes.specialeventroute);
+                            },
+                            child: Container(
+                              width: 183,
+                              alignment: Alignment.center,
+                              decoration: BoxDecoration(
+                                border: Border.all(
+                                    color: Color(0xffffffff), width: 3),
+                                borderRadius:
+                                    BorderRadius.all(Radius.circular(20)),
+                                color: Color.fromARGB(115, 225, 225, 225),
+                              ),
+                              child: Text(
+                                '🎊Special  Events🎊',
+                                style: GoogleFonts.poppins(
+                                    fontSize: 27,
+                                    // color: Color(0xffffffff),
+                                    fontWeight: FontWeight.w600),
+                                textAlign: TextAlign.center,
+                              ),
+                            ),
                           ),
                         ),
                       ),
@@ -509,7 +517,7 @@ class _HomepageState extends State<Homepage> {
                                     BorderRadius.all(Radius.circular(20)),
                                 // color: const Color.fromARGB(255, 169, 150, 150),
                               ),
-                              child: Text('Nearby Hospitals',
+                              child: Text('📍Nearby Hospitals',
                                   style: GoogleFonts.poppins(
                                       fontSize: 27,
                                       fontWeight: FontWeight.w600,
@@ -536,7 +544,7 @@ class _HomepageState extends State<Homepage> {
                             color: Color(0xffdadada),
                           ),
                           child: Text(
-                            'Medical Reports',
+                            'Medical Reports📁',
                             style: GoogleFonts.poppins(
                                 fontSize: 30, fontWeight: FontWeight.w600),
                             textAlign: TextAlign.center,

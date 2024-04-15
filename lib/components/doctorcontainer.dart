@@ -19,14 +19,18 @@ class Doctorcom extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       height: 150,
-      padding: EdgeInsets.all(15),
       margin: EdgeInsets.only(top: 5, bottom: 10, left: 10, right: 10),
       decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(20), color: Color(0xff689AFA)),
+          border: Border.all(color: Color(0xff000000), width: 2),
+          borderRadius: BorderRadius.circular(20),
+          color: Color(0xff689AFA)),
       alignment: Alignment.center,
       child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        // crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           Row(
+            mainAxisAlignment: MainAxisAlignment.center,
             // mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: [
               Container(

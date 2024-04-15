@@ -7,8 +7,9 @@ class Specialevent extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Padding(
+      body: Container(
         padding: const EdgeInsets.only(top: 10, left: 10, right: 10),
+        decoration: BoxDecoration(color: Color(0xffdadada)),
         child: ListView(
           physics: BouncingScrollPhysics(),
           children: [
@@ -16,35 +17,35 @@ class Specialevent extends StatelessWidget {
               name: "Stress Reduction",
               date: "14 March",
               time: "10am to 11am",
-              image: "image",
+              image: "assets/images/stress.png",
               address: 'address',
             ),
             Specialcomponent(
               name: "Laughter Club",
               date: "22 March",
               time: "6am to 7am",
-              image: "image",
+              image: "assets/images/club.jpg",
               address: 'address',
             ),
             Specialcomponent(
               name: "Guided Meditation",
               date: "29 March",
               time: "7am to 8am",
-              image: "image",
+              image: "assets/images/medi.jpeg",
               address: 'address',
             ),
             Specialcomponent(
               name: "Mindful Breathing",
               date: "5 April",
               time: "6am to 8am",
-              image: "image",
+              image: "assets/images/breath.jpg",
               address: 'address',
             ),
             Specialcomponent(
               name: "Yoga Classes",
               date: "13 April",
               time: "7am to 8am",
-              image: "image",
+              image: "assets/images/yoga.jpg",
               address: 'address',
             ),
           ],

@@ -41,17 +41,21 @@ class _SuggestionsState extends State<Suggestions> {
   Widget build(BuildContext context) {
     return Scaffold(
         backgroundColor: Color(0xffdadada),
-        body: ListView(
-          children: [
-            Container(
-              child: Text(
-                  "Here's What we would like to Suggest According to the Result"),
-            ),
-            Container(child: Text(suggesttext[index])),
-            Container(
-              child: suggestwidgets[index],
-            )
-          ],
+        body: Container(
+          width: double.infinity,
+          height: double.infinity,
+          child: ListView(
+            children: [
+              Container(
+                child: Text(
+                    "Here's What we would like to Suggest According to the Result"),
+              ),
+              Container(child: Text(suggesttext[index])),
+              Container(
+                child: suggestwidgets[index],
+              )
+            ],
+          ),
         ));
   }
 }

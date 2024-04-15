@@ -11,6 +11,7 @@ import 'package:beyondpeace/pages/mainpage.dart';
 // import 'package:beyondpeace/pages/mentalexercise.dart';
 import 'package:beyondpeace/pages/noname.dart';
 import 'package:beyondpeace/pages/specialevent.dart';
+import 'package:beyondpeace/pages/splashscreen.dart';
 import 'package:beyondpeace/pages/video/video_list.dart';
 // import 'package:beyondpeace/pages/music.dart';
 // import 'package:beyondpeace/pages/musicplayer.dart';
@@ -53,7 +54,8 @@ class MyApp extends StatelessWidget {
         Myroutes.assesmentroute: (context) => Assesmentpage(),
         Myroutes.filestoreroute: (context) => Filestorepage(),
         Myroutes.nonameroute: (context) => Nonamepage(),
-        Myroutes.specialeventroute: (context) => Specialevent()
+        Myroutes.specialeventroute: (context) => Specialevent(),
+        Myroutes.authroute: (context) => Authpage()
       },
       home: const Authpage(),
     );

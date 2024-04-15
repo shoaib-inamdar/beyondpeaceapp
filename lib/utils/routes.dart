@@ -11,4 +11,5 @@ class Myroutes {
   static String filestoreroute = '/homepage/filestore';
   static String nonameroute = '/homepage/noname';
   static String specialeventroute = '/homepage/specialevent';
+  static String authroute = '/authpage';
 }
