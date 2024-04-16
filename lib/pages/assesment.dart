@@ -13,7 +13,9 @@ class Assesmentpage extends StatefulWidget {
   @override
   State<Assesmentpage> createState() => _AssesmentpageState();
 }
-int _points=0;
+
+int _points = 0;
+
 class _AssesmentpageState extends State<Assesmentpage> {
   List<String> _question = [
     "How would you rate your overall mood over the past week?",
@@ -122,104 +124,118 @@ class _AssesmentpageState extends State<Assesmentpage> {
   Widget build(BuildContext context) {
     return Scaffold(
         backgroundColor: Color(0xff739ccee),
-        body: PageView.builder(
-          itemBuilder: (context, index) {
-            return Column(
-              children: [
-                SizedBox(
-                  height: 100,
-                ),
-                customProgressBar(width: 350, height: 22, progress: percent),
-                Padding(
-                  padding: const EdgeInsets.only(top: 50),
-                  child: Container(
-                      alignment: Alignment.centerLeft,
-                      margin: EdgeInsets.only(left: 30),
-                      child: Text(
-                        _question[index],
-                        style: TextStyle(
-                            fontSize: 20, fontWeight: FontWeight.w900),
-                      )),
-                ),
-                Column(
-                  children: [
-                    Padding(
-                      padding: const EdgeInsets.only(top: 50, left: 40),
-                      child: Container(
-                          alignment: Alignment.centerLeft,
-                          child: customRadio(_option1[index], 1)),
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.only(top: 30, left: 40),
-                      child: Container(
-                          alignment: Alignment.centerLeft,
-                          child: customRadio(_option2[index], 2)),
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.only(top: 30, left: 40),
-                      child: Container(
-                          alignment: Alignment.centerLeft,
-                          child: customRadio(_option3[index], 3)),
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.only(top: 30, left: 40),
-                      child: Container(
-                          alignment: Alignment.centerLeft,
-                          child: customRadio(_option4[index], 4)),
-                    ),
-                  ],
-                ),
-                Padding(
-                  padding:
-                  const EdgeInsets.only(left: 100, right: 100, top: 100),
-                  child: ElevatedButton(
-                    style: ButtonStyle(
-                      backgroundColor:
-                      MaterialStateProperty.all(Colors.greenAccent),
-                    ),
-                    onPressed: () {
-                      setState(() {
-                        if (selected == 0) {
-                          // Show a snackbar or any other form of feedback to indicate that an option must be selected
-                          ScaffoldMessenger.of(context).showSnackBar(
-                            SnackBar(content: Text("Please select an option")),
-                          );
-                        } else {
-                          if (index == 9) {
-                            Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                  builder: (context) => Suggestions(data: _points,)),
-                            );
-                            print('Total Points : $_points');
-
-                          } else {
-                            if (percent < 10) {
-                              percent += 1;
-                            }
-                            selected = 0;
-                            Page_controller.nextPage(
-                              duration: Duration(milliseconds: 10),
-                              curve: Curves.easeIn,
-                            );
-                          }
-                        }
-                      });
-                    },
+        body: Container(
+          width: double.infinity,
+          height: double.infinity,
+          decoration: BoxDecoration(
+            gradient: LinearGradient(
+              colors: [Color(0xff6dd5ed), Color(0xfff8cdda)],
+              stops: [0.25, 0.75],
+              begin: Alignment.topRight,
+              end: Alignment.bottomLeft,
+            ),
+          ),
+          child: PageView.builder(
+            itemBuilder: (context, index) {
+              return Column(
+                children: [
+                  SizedBox(
+                    height: 100,
+                  ),
+                  customProgressBar(width: 350, height: 22, progress: percent),
+                  Padding(
+                    padding: const EdgeInsets.only(top: 50),
                     child: Container(
-                        alignment: Alignment.center,
+                        alignment: Alignment.centerLeft,
+                        margin: EdgeInsets.only(left: 30),
                         child: Text(
-                          "Next",
-                          style: TextStyle(color: Colors.black, fontSize: 20),
+                          _question[index],
+                          style: TextStyle(
+                              fontSize: 20, fontWeight: FontWeight.w900),
                         )),
                   ),
-                ),
-              ],
-            );
-          },
-          itemCount: 10,
-          physics: const NeverScrollableScrollPhysics(),
-          controller: Page_controller,
+                  Column(
+                    children: [
+                      Padding(
+                        padding: const EdgeInsets.only(top: 50, left: 40),
+                        child: Container(
+                            alignment: Alignment.centerLeft,
+                            child: customRadio(_option1[index], 1)),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.only(top: 30, left: 40),
+                        child: Container(
+                            alignment: Alignment.centerLeft,
+                            child: customRadio(_option2[index], 2)),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.only(top: 30, left: 40),
+                        child: Container(
+                            alignment: Alignment.centerLeft,
+                            child: customRadio(_option3[index], 3)),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.only(top: 30, left: 40),
+                        child: Container(
+                            alignment: Alignment.centerLeft,
+                            child: customRadio(_option4[index], 4)),
+                      ),
+                    ],
+                  ),
+                  Padding(
+                    padding:
+                        const EdgeInsets.only(left: 100, right: 100, top: 100),
+                    child: ElevatedButton(
+                      style: ButtonStyle(
+                        backgroundColor:
+                            MaterialStateProperty.all(Colors.greenAccent),
+                      ),
+                      onPressed: () {
+                        setState(() {
+                          if (selected == 0) {
+                            // Show a snackbar or any other form of feedback to indicate that an option must be selected
+                            ScaffoldMessenger.of(context).showSnackBar(
+                              SnackBar(
+                                  content: Text("Please select an option")),
+                            );
+                          } else {
+                            if (index == 9) {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => Suggestions(
+                                          data: _points,
+                                        )),
+                              );
+                              print('Total Points : $_points');
+                            } else {
+                              if (percent < 10) {
+                                percent += 1;
+                              }
+                              selected = 0;
+                              Page_controller.nextPage(
+                                duration: Duration(milliseconds: 10),
+                                curve: Curves.easeIn,
+                              );
+                            }
+                          }
+                        });
+                      },
+                      child: Container(
+                          alignment: Alignment.center,
+                          child: Text(
+                            "Next",
+                            style: TextStyle(color: Colors.black, fontSize: 20),
+                          )),
+                    ),
+                  ),
+                ],
+              );
+            },
+            itemCount: 10,
+            physics: const NeverScrollableScrollPhysics(),
+            controller: Page_controller,
+          ),
         ));
   }
 }

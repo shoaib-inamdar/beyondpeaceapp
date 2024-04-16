@@ -1,4 +1,8 @@
 // import 'package:flutter/cupertino.dart';
+import 'package:beyondpeace/components/widget1.dart';
+import 'package:beyondpeace/components/widget2.dart';
+import 'package:beyondpeace/components/widget3.dart';
+import 'package:beyondpeace/components/widget4.dart';
 import 'package:beyondpeace/utils/routes.dart';
 import 'package:flutter/material.dart';
 
@@ -13,7 +17,7 @@ class Suggestions extends StatefulWidget {
 class _SuggestionsState extends State<Suggestions> {
   List suggesttext = ["", "", "", ""];
   List suggestwidgets = [Widget1(), Widget2(), Widget3(), Widget4()];
-  var index;
+  int index = 0;
   void check() {
     if (widget.data > 30) {
       index = 0;
@@ -34,6 +38,7 @@ class _SuggestionsState extends State<Suggestions> {
 
   @override
   void dispose() {
+    check();
     super.dispose();
   }
 
@@ -45,157 +50,27 @@ class _SuggestionsState extends State<Suggestions> {
           width: double.infinity,
           height: double.infinity,
           child: ListView(
+            scrollDirection: Axis.vertical,
+            shrinkWrap: true,
             children: [
               Container(
+                padding: EdgeInsets.only(top: 20, left: 20, right: 20),
                 child: Text(
                     "Here's What we would like to Suggest According to the Result"),
               ),
-              Container(child: Text(suggesttext[index])),
               Container(
+                  padding: EdgeInsets.only(top: 20, left: 20, right: 20),
+                  width: 200,
+                  height: 100,
+                  child: Text(suggesttext[index])),
+              Container(
+                padding: EdgeInsets.only(top: 20, left: 20, right: 20),
+                width: 200,
+                height: 400,
                 child: suggestwidgets[index],
               )
             ],
           ),
         ));
-  }
-}
-
-class Widget1 extends StatelessWidget {
-  const Widget1({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      child: ListView(
-        physics: BouncingScrollPhysics(),
-        children: [
-          InkWell(
-            onTap: () {
-              Navigator.pushNamed(context, Myroutes.mentalmusicroute);
-            },
-            child: Container(
-              child: Text('Music'),
-            ),
-          ),
-        ],
-      ),
-    );
-  }
-}
-
-class Widget2 extends StatelessWidget {
-  const Widget2({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      child: ListView(
-        physics: BouncingScrollPhysics(),
-        children: [
-          InkWell(
-            onTap: () {
-              Navigator.pushNamed(context, Myroutes.mentalmusicroute);
-            },
-            child: Container(
-              child: Text('Music'),
-            ),
-          ),
-          InkWell(
-            onTap: () {
-              Navigator.pushNamed(context, Myroutes.specialeventroute);
-            },
-            child: Container(
-              child: Text('Special Events'),
-            ),
-          ),
-        ],
-      ),
-    );
-  }
-}
-
-class Widget3 extends StatelessWidget {
-  const Widget3({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      child: ListView(
-        physics: BouncingScrollPhysics(),
-        children: [
-          InkWell(
-            onTap: () {
-              Navigator.pushNamed(context, Myroutes.mentalmusicroute);
-            },
-            child: Container(
-              child: Text('Music'),
-            ),
-          ),
-          InkWell(
-            onTap: () {
-              Navigator.pushNamed(context, Myroutes.specialeventroute);
-            },
-            child: Container(
-              child: Text('Special Events'),
-            ),
-          ),
-          InkWell(
-            onTap: () {
-              Navigator.pushNamed(context, Myroutes.mentalexerciseroute);
-            },
-            child: Container(
-              child: Text('Brain Exercise'),
-            ),
-          ),
-        ],
-      ),
-    );
-  }
-}
-
-class Widget4 extends StatelessWidget {
-  const Widget4({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      child: ListView(
-        physics: BouncingScrollPhysics(),
-        children: [
-          InkWell(
-            onTap: () {
-              Navigator.pushNamed(context, Myroutes.mentalmusicroute);
-            },
-            child: Container(
-              child: Text('Music'),
-            ),
-          ),
-          InkWell(
-            onTap: () {
-              Navigator.pushNamed(context, Myroutes.specialeventroute);
-            },
-            child: Container(
-              child: Text('Special Events'),
-            ),
-          ),
-          InkWell(
-            onTap: () {
-              Navigator.pushNamed(context, Myroutes.mentalexerciseroute);
-            },
-            child: Container(
-              child: Text('Brain Exercise'),
-            ),
-          ),
-          InkWell(
-            onTap: () {
-              Navigator.pushNamed(context, Myroutes.doctorcommunicateroute);
-            },
-            child: Container(
-              child: Text('Consult Specialist'),
-            ),
-          ),
-        ],
-      ),
-    );
   }
 }
