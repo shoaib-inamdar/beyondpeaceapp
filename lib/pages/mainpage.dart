@@ -5,7 +5,7 @@ import 'package:beyondpeace/pages/assesment.dart';
 import 'package:beyondpeace/pages/doctor.dart';
 import 'package:beyondpeace/pages/filestore.dart';
 import 'package:beyondpeace/pages/login_or_register.dart';
-import 'package:beyondpeace/pages/noname.dart';
+// import 'package:beyondpeace/pages/noname.dart';
 import 'package:beyondpeace/pages/specialevent.dart';
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:beyondpeace/pages/homepage.dart';
