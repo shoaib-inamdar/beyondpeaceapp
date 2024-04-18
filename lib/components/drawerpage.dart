@@ -1,8 +1,10 @@
+
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
 class Drawerpage extends StatelessWidget {
   const Drawerpage({super.key});
+
   Future<void> signout() async {
     await FirebaseAuth.instance.signOut();
   }
@@ -103,8 +105,7 @@ class Drawerpage extends StatelessWidget {
                 ),
                 ElevatedButton(
                   onPressed: () {
-                    _submitFeedback();
-                    Navigator.of(context).pop();
+                    _submitFeedback(context);
                   },
                   child: const Text('Submit'),
                 ),
@@ -116,10 +117,31 @@ class Drawerpage extends StatelessWidget {
     );
   }
 
-  void _submitFeedback() {
-    // Add your logic to submit feedback here
+  void _submitFeedback(BuildContext context) {
+    showDialog(
+      context: context,
+      builder: (BuildContext context) {
+        return StatefulBuilder(
+          builder: (context, setState) {
+            return AlertDialog(
+              title: const Text('Thank You'),
+              content:
+              Text('Your Feedback has been Submitted'),
+              actions: [
+                ElevatedButton(
+                  onPressed: () {
+                    Navigator.of(context).pop();
+                    Navigator.of(context).pop();
+                  },
+                  child: const Text('OK'),
+                ),
+              ],
+            );
+          },
+        );
+      },
+    );
     print('Feedback submitted: $_selectedRating');
   }
 }
-
 int? _selectedRating;
