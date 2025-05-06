@@ -12,4 +12,5 @@ class Myroutes {
   static String nonameroute = '/homepage/noname';
   static String specialeventroute = '/homepage/specialevent';
   static String authroute = '/authpage';
+  static String chatroute = '/chatpage';
 }

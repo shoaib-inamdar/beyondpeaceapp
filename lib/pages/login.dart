@@ -3,6 +3,7 @@
 // import 'dart:js_interop';
 
 // import 'package:beyondpeace/utils/routes.dart';
+import 'package:beyondpeace/utils/routes.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -191,6 +192,14 @@ class _LoginState extends State<Login> {
                             ),
                             Image.asset("assets/images/apple.jpg", height: 60)
                           ],
+                        ),
+                        InkWell(
+                          onTap: (){
+                            Navigator.pushNamed(context, Myroutes.mainroute);
+                          },
+                          child: Container(
+                            child: Text("enter"),
+                          ),
                         )
                       ],
                     ),

@@ -1,7 +1,10 @@
 // import 'package:beyondpeace/homepage.dart';
+import 'package:beyondpeace/api.dart';
+import 'package:beyondpeace/pages/Chatpage.dart';
 import 'package:beyondpeace/pages/Maps/Maps.dart';
 import 'package:beyondpeace/pages/assesment.dart';
 import 'package:beyondpeace/pages/auth_page.dart';
+// import 'package:beyondpeace/pages/Chatpage.dart';
 import 'package:beyondpeace/pages/doctor.dart';
 // import 'package:beyondpeace/pages/entrypage.dart';
 import 'package:beyondpeace/pages/filestore.dart';
@@ -17,10 +20,12 @@ import 'package:beyondpeace/pages/video/video_list.dart';
 import 'package:beyondpeace/utils/routes.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
+import 'package:flutter_gemini/flutter_gemini.dart';
 import 'firebase_options.dart';
 // import 'package:beyondpeace/utils/routes.dart';
 
 void main() async {
+  Gemini.init(apiKey: Gemini_api_key);
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
@@ -53,7 +58,8 @@ class MyApp extends StatelessWidget {
         Myroutes.assesmentroute: (context) => Assesmentpage(),
         Myroutes.filestoreroute: (context) => Filestorepage(),
         Myroutes.specialeventroute: (context) => Specialevent(),
-        Myroutes.authroute: (context) => Authpage()
+        Myroutes.authroute: (context) => Authpage(),
+        Myroutes.chatroute: (context) => Chatpage()
       },
       home: const Splashscreen(),
     );

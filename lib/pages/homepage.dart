@@ -9,8 +9,10 @@ import 'package:beyondpeace/pages/music/musics_list_page.dart';
 // import 'package:beyondpeace/pages/music.dart';
 import 'package:beyondpeace/utils/routes.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:carousel_slider/carousel_slider.dart';
+import 'package:flutter/widgets.dart';
 import 'package:flutter_phone_direct_caller/flutter_phone_direct_caller.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
@@ -169,7 +171,7 @@ class _HomepageState extends State<Homepage> {
                                     onSelectedItem: (index) {
                                       if (index == 0) {
                                         FlutterPhoneDirectCaller.callNumber(
-                                            '+917841932960');
+                                            '+917414981942');
                                       }
                                       if (index == 1) {
                                         FlutterPhoneDirectCaller.callNumber(
@@ -579,6 +581,23 @@ class _HomepageState extends State<Homepage> {
             ],
           ),
         ),
+        floatingActionButton: InkWell(child: Container(
+                          width: 52,
+                          height: 52,
+                          padding: EdgeInsets.all(20),
+                          decoration: BoxDecoration(
+                              color: Color(0xfff8cdda),
+                              border: Border.all(
+                                  color: Color(0xffffffff), width: 2),
+                              borderRadius: BorderRadius.circular(15),
+                              image: new DecorationImage(
+                                  image: AssetImage("assets/images/chatbot.jpg"),
+                                  fit: BoxFit.contain)),
+                        ),
+        onTap: () => { 
+                              Navigator.pushNamed(
+                                  context, Myroutes.chatroute)
+                            },)
       ),
     );
   }

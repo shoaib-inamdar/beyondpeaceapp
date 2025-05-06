@@ -58,7 +58,7 @@ dependencies:
   flutter_phone_direct_caller: ^2.1.1
   google_sign_in: 6.1.6
   better_player: ^0.0.83
-  gallery_picker: 0.4.7
+  # gallery_picker: 0.4.7
   file_picker: 5.2.10
   easy_pdf_viewer: ^1.0.8
   liquid_pull_to_refresh: ^3.0.1
@@ -66,6 +66,9 @@ dependencies:
   just_audio: ^0.9.37
   youtube_player_flutter: ^9.0.0
   google_fonts: 4.0.4
+  flutter_gemini: ^3.0.0
+  # image_picker: ^1.1.2
+  dash_chat_2: ^0.0.20
 
 dev_dependencies:
   flutter_test:
