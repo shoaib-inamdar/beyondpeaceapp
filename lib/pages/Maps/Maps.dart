@@ -75,7 +75,7 @@ class _MapsState extends State<Maps> {
       locationName: '',
       labelColor: Colors.grey);
 
-  String apiKeyCur = "AIzaSyCBuHO7XMbaOfloGh0hp8JjEpW2Jhcwk0g";
+  String apiKeyCur = "YOUR_API_KEY";
   static final CameraPosition _kGoogle = const CameraPosition(
     target: LatLng(20.42796133580664, 80.885749655962),
     zoom: 14.4746,
